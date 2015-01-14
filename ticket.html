@@ -1,0 +1,41 @@
+<head>
+  <title>ticktickticket</title>
+</head>
+
+<body>
+<div id="container">
+  <h1 class="header">Welcome to Tick<span id="tealtick">Tick</span>Ticket!</h1>
+  <h3 class="header" id="empire">The empire's most sophisticated queue facilitation software.</h3>
+  {{> waiting}}
+  {{> ticket}}
+  {{> thanks}}
+
+</div>
+</body>
+
+<template name="waiting">
+	<p>Currently waiting:</p>
+	<ol>
+		<li>
+			<span id="waiting">{{waiting}}:</span> {{issue}}
+		</li>
+	</ol>	
+	<input type="remove" id="remove" name="remove" value="remove from list">
+</template> 
+
+<template name="ticket">
+	<form>
+		<ul>
+			<li><input type="studentname" name="studentname" value="Take a ticket! (Enter your name)" class="textinput" id="studentname"></li>
+			<li><input type="issue" name="issue" value="(Briefly!) describe your issue" class="textinput"></li>
+			<li><input type="submit" id="submit" name="submit" value="submit"></li>
+			
+		</ul>
+	</form>	 
+</template>
+
+<template name="thanks">
+	<p>Kevin has been thanked {{counter}} times.</p>
+	<button>Leave Kevin a thank you!</button>
+	
+</template>
