@@ -3,13 +3,31 @@ body {
 	font-family: sans-serif;
 
 }
-
-#container {
-	max-width: 800px;
-	padding: 50px 100px;
-	margin: auto;
+#studentList {
+	display: inline-block;
+	width: 250px;
+	padding: 10px;
+	height: 100%;
 }
 
+#ticketForm {
+	display: inline-block;
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+}
+#container {
+	max-width: 600px;
+	padding: 50px 100px;
+	margin: auto;
+	border: dotted black 2px;
+	border-radius: 10px;
+}
+
+#thanks {
+	width: 300px;
+	padding: 10px;
+}
 
 ul {
 	padding: 0px;
@@ -24,7 +42,7 @@ ul li {
 
 #waitingStudents {
 	font-weight: bold; 
-	font-size: 18px;
+	font-size: 24px;
 	margin: 0;
 
 }
@@ -32,11 +50,13 @@ ul li {
 h1 {
 	font-size: 3em;
 	margin-bottom: 0px;
+	text-align: center;
 }
 
 #empire {
 	font-style: italic;
 	margin-top: 3px;
+	text-align: center;
 }
 
 #tealtick {
@@ -64,7 +84,6 @@ h1 {
 	font-size: 14px;
 }
 #waiting {
-	font-weight: bold;
 	font-size: 24px;
 }
 
@@ -86,3 +105,13 @@ p {
 	background-color: #DBFEF8;
 }
 
+button {
+	height: 50px;
+	width: 150px;
+	background-color: teal;
+	color: white;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	font-weight: bold;
+}

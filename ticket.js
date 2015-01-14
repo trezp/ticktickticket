@@ -16,9 +16,6 @@ if (Meteor.isClient) {
       return Students.find()
     },
 
-    'issue' : function() {
-      return "My shit is broke!"
-    },
     'selectedClass': function(){
         //stores the unique id from the click event
         //has access to this._id because it's being excuted
@@ -35,9 +32,9 @@ if (Meteor.isClient) {
     'currentlyWaiting': function(){
       //if the ul with this id has any list items, a message will be displayed.
       //DOES NOT CURRENTLY WORK
-        // if( $('#waitingStudents').has('li').text){
-        //   return "Currently Waiting:"
-        // }
+        if( $('#waitingStudents').has('li').text){
+          return "CURRENTLY WAITING FOR HELP:"
+        }
       }
     
   });
@@ -61,7 +58,11 @@ if (Meteor.isClient) {
         //set the retrieved info to a variable
         var studentClicked = Session.get('studentClicked');
       
-      }
+      },
+       'click .remove' : function(event){
+      var studentClicked = Session.get('studentClicked');
+      Students.remove(studentClicked)
+    }
   });
 
   Template.ticket.events({
@@ -69,8 +70,15 @@ if (Meteor.isClient) {
       //using the a method from the event objects to prevent page from
       //refreshing when page is submitted
       event.preventDefault();
-      console.log("Form submitted!");
-      console.log(event.type)
+      var studentname = event.target.studentname.value;
+      var issue = event.target.issue.value;
+      console.log(issue)
+      Students.insert({
+        name: studentname,
+        issue: issue
+      }); 
+      event.target.studentname.value = "";
+      event.target.issue.value = "";
     }
   });
 }
