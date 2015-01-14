@@ -1,22 +1,28 @@
 <head>
   <title>ticktickticket</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
+ <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|PT+Sans:700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 	<div id="container">
-		<h1 class="header">Welcome to Tick<span id="tealtick">Tick</span>Ticket!</h1>
+		<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
 		<h3 class="header" id="empire">The empire's most sophisticated queue facilitation software.</h3>
-		<div id="ticketForm">
-		  	{{> ticket}}
+			<div id="ticketForm">
+			  	{{> ticket}}
+			</div>
+			<div id="studentList">
+			  <p id="waitlisthead">WAIT LIST</p>
+			  {{> waiting}}
+			 <div id="thankyou">
+				{{> thanks}}
+			</div>
+	
 		</div>
-		<div id="studentList">
-		  <p>Currently Waiting...</p>
-		  {{> waiting}}
-		</div>
-		<div id="thanks">
-		  {{> thanks}}
-		</div>
-	</div>
+		
+	</div>	
+		
+
 </body>
 
 <template name="waiting">
@@ -27,7 +33,7 @@
 		</li>
 		{{/each}}
 	</ul>	
-	<input type="button" class="remove" id="remove" value="remove from list">
+	<input type="button" class="remove" id="remove" value="remove">
 </template> 
 
 <template name="ticket">
@@ -44,6 +50,5 @@
 </template>
 
 <template name="thanks">
-	<button>SAY THANKS TO KEVIN!</button>
-	<p>Kevin has been thanked {{counter}} times.</p>
+	<p>Kevin has been thanked <br><span id="counter">{{counter}}</span> times.</p><button>THANKS, KEVIN!</button>
 </template>

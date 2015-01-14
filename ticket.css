@@ -1,33 +1,32 @@
 /* CSS declarations go here */
+/** {
+	border: dotted black 1px;
+}*/
+
 body {
-	font-family: sans-serif;
+	font-family: 'PT Sans', sans-serif;
 
 }
 #studentList {
 	display: inline-block;
-	width: 250px;
-	padding: 10px;
-	height: 100%;
+	width: 300px;
+	vertical-align: top;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 #ticketForm {
 	display: inline-block;
+	vertical-align: top;
 	width: 300px;
-	height: 200px;
-	padding: 10px;
+
 }
 #container {
-	max-width: 600px;
-	padding: 50px 100px;
-	margin: auto;
-	border: dotted black 2px;
+	max-width: 700px;
 	border-radius: 10px;
+	margin: auto;
 }
 
-#thanks {
-	width: 300px;
-	padding: 10px;
-}
 
 ul {
 	padding: 0px;
@@ -48,15 +47,25 @@ ul li {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 4em;
 	margin-bottom: 0px;
-	text-align: center;
+}
+
+#waitlisthead {
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 2em;
+	letter-spacing: 2px;
+	margin: 20px 0px;
+}
+#whole-name {
+	font-family: 'Luckiest Guy', cursive;
+	letter-spacing: 2px;
 }
 
 #empire {
-	font-style: italic;
 	margin-top: 3px;
-	text-align: center;
+	margin-bottom: 20px;
+
 }
 
 #tealtick {
@@ -67,6 +76,7 @@ h1 {
 .textinput {
 	height: 25px;
 	width: 250px;
+	font-size: 16px;
 }
 
 #studentname {
@@ -74,27 +84,31 @@ h1 {
 }
 
 #remove {
-	height: 25px;
+	height: 40px;
 	width: 150px;
 	background-color: teal;
 	color: white;
 	border: none;
+	border-radius: 2px;
 	outline: none;
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
+	letter-spacing: 1.5px;
 }
 #waiting {
 	font-size: 24px;
 }
 
 #submit {
-	height: 25px;
+	height: 40px;
 	width: 150px;
 	background-color: teal;
 	color: white;
 	border: none;
+	border-radius: 2px;
 	outline: none;
-	font-size: 14px;
+	font-size: 16px;
+	letter-spacing: 1.5px
 }
 
 p {
@@ -106,12 +120,62 @@ p {
 }
 
 button {
-	height: 50px;
+	height: 40px;
 	width: 150px;
-	background-color: teal;
+	background-color: orange;
 	color: white;
 	border: none;
+	border-radius: 2px;
 	outline: none;
 	font-size: 14px;
 	font-weight: bold;
+	letter-spacing: 1.25px;
+	text-align: center;
 }
+
+#thankyou{
+	width: 250px;
+	margin-top: 40px;
+	display: inline-block;
+}
+
+#counter {
+	color: orange;
+	font-size: 2em;
+}
+
+/*************SMALLER SCREENS *************/
+
+@media (max-width: 450px) {
+
+	#container {
+		max-width: 100%;
+
+	}
+
+	#studentList {
+		display: block;
+		width: 100%;
+		height: 100%;
+		vertical-align: top;
+		margin: 0px;
+		padding-left: 5px;
+	}
+
+	#ticketForm {
+		display: block;
+		vertical-align: top;
+		width: 100%;
+		padding-left: 5px;
+
+	}
+
+	h1 {
+		font-size: 2em;
+		margin-bottom: 0px;
+
+
+	}
+
+
+ }
