@@ -14,12 +14,14 @@
 </body>
 
 <template name="waiting">
-	<p>Currently waiting:</p>
-	<ol>
-		<li>
-			<span id="waiting">{{waiting}}:</span> {{issue}}
+	<p>{{currentlyWaiting}}</p>
+	<ul id="waitingStudents">
+		{{#each waiting}}
+		<li class="students {{selectedClass}}">
+		{{name}}: {{issue}}
 		</li>
-	</ol>	
+		{{/each}}
+	</ul>	
 	<input type="remove" id="remove" name="remove" value="remove from list">
 </template> 
 
