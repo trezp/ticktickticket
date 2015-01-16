@@ -1,21 +1,32 @@
 Students = new Mongo.Collection('students')
+Thanks = new Mongo.Collection('thanks')
 
 if (Meteor.isClient) {
   // counter starts at 0
-  Session.setDefault("counter", 0);
+  // Session.setDefault("counter", 0);
 
+  // Template.thanks.helpers({
+  //   counter: function () {
+  //     return Session.get("counter");
+  //   }
+  // });
   Template.thanks.helpers({
-    counter: function () {
-      return Session.get("counter");
+    //BROKEN. RESET THE DATABASE AND CREATE A PROPER ENTRY. THEN FIGURE OUT
+       //HOW TO ACCESS AND DISPLAY PROPERLY. 
+    'counter': function(){
+       var thanks = Thanks.find().fetch();
+       console.log(thanks);
+       return thanks.count();
     }
+    
   });
 
   Template.waiting.helpers({
     //helpers refer to {{handlebar}} keywords in the html
+    //return students from the database
     'waiting' : function (){
       return Students.find()
-    },
-
+},
     'selectedClass': function(){
         //stores the unique id from the click event
         //has access to this._id because it's being excuted
@@ -36,13 +47,17 @@ if (Meteor.isClient) {
           return "CURRENTLY WAITING FOR HELP:"
         }
       }
-    
+      
   });
 
   Template.thanks.events({
     'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
+      //updates the "count" value of the Thanks collection in the database
+      //when button is clicked. Currently updates just fine but does not display
+      var countId = Thanks.update({_id: "R2Fe2kquvNWkknnpM"}, {$inc: {count : 1}});
+      Session.set('increment', countId);
+      var increment = Session.get('increment');
+  
     }
   });
 
@@ -88,3 +103,5 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+
