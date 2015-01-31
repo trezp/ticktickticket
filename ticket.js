@@ -2,22 +2,11 @@ Students = new Mongo.Collection('students')
 Thanks = new Mongo.Collection('thanks')
 
 if (Meteor.isClient) {
-  // counter starts at 0
-  // Session.setDefault("counter", 0);
-
-  // Template.thanks.helpers({
-  //   counter: function () {
-  //     return Session.get("counter");
-  //   }
-  // });
   Template.thanks.helpers({
-    //BROKEN. RESET THE DATABASE AND CREATE A PROPER ENTRY. THEN FIGURE OUT
-       //HOW TO ACCESS AND DISPLAY PROPERLY. 
-    'counter': function(){
-       var thanks = Thanks.find().fetch();
-       console.log(thanks);
-       return thanks.count();
+    counter : function(){
+      return Thanks.findOne().thanks
     }
+    
     
   });
 
@@ -51,12 +40,9 @@ if (Meteor.isClient) {
   });
 
   Template.thanks.events({
-    'click button': function () {
-      //updates the "count" value of the Thanks collection in the database
-      //when button is clicked. Currently updates just fine but does not display
-      var countId = Thanks.update({_id: "R2Fe2kquvNWkknnpM"}, {$inc: {count : 1}});
+    'click .increment': function () {
+      var countId = Thanks.update({_id: "CmuYZDGireYrZBcBT"}, {$inc: {thanks : 1} });
       Session.set('increment', countId);
-      var increment = Session.get('increment');
   
     }
   });

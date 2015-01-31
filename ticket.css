@@ -1,7 +1,4 @@
-/* CSS declarations go here */
-/** {
-	border: dotted black 1px;
-}*/
+
 
 body {
 	font-family: 'PT Sans', sans-serif;
@@ -52,13 +49,13 @@ h1 {
 }
 
 #waitlisthead {
-	font-family: 'Luckiest Guy', cursive;
+	font-family: 'Luckiest Guy', sans-serif;
 	font-size: 2em;
 	letter-spacing: 2px;
 	margin: 20px 0px;
 }
 #whole-name {
-	font-family: 'Luckiest Guy', cursive;
+	font-family: 'Luckiest Guy', sans-serif;
 	letter-spacing: 2px;
 }
 
@@ -119,7 +116,7 @@ p {
 	background-color: #DBFEF8;
 }
 
-button {
+.increment {
 	height: 40px;
 	width: 150px;
 	background-color: orange;
