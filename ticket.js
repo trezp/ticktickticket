@@ -1,6 +1,7 @@
 Students = new Mongo.Collection('students')
 Thanks = new Mongo.Collection('thanks')
 
+
 if (Meteor.isClient) {
   Template.thanks.helpers({
     counter : function(){
@@ -41,8 +42,9 @@ if (Meteor.isClient) {
 
   Template.thanks.events({
     'click .increment': function () {
-      var countId = Thanks.update({_id: "CmuYZDGireYrZBcBT"}, {$inc: {thanks : 1} });
-      Session.set('increment', countId);
+      var thanksKevin = Thanks.findOne();
+      Thanks.update(thanksKevin._id, {$inc: {thanks : 1}});
+      
   
     }
   });
