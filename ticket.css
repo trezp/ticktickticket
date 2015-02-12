@@ -141,7 +141,6 @@ p {
 
 #thankyou {
 	width: 250px;
-	margin-top: 40px;
 	display: inline-block;
 }
 
@@ -151,9 +150,8 @@ p {
 }
 
 
-.fa-trash-o:hover {
-	background-color: #DBFEF8
-	font-size: 40px;
+.fa-times-circle:hover {
+	color: red;
 }
 
 /*************SMALLER SCREENS *************/
@@ -185,9 +183,32 @@ p {
 	h1 {
 		font-size: 2em;
 		margin-bottom: 0px;
-
-
 	}
 
+	#thankyou p {
+		font-size: 14px;
+		margin: 0;
+		margin-top: 10px;
+	}
+
+	#thankyou span {
+		font-size: 16px;
+	}
+
+	.increment {
+		height: 20px;
+		width: 150px;
+	}
+
+	#waitlisthead {
+		font-family: 'Luckiest Guy', sans-serif;
+		font-size: 2.5em;
+		letter-spacing: 2px;
+		margin-bottom: 0px;
+		margin-top: 30px;
+	}
+	ul {
+		margin-top: 0px;
+	}
 
  }
