@@ -10,6 +10,7 @@ body {
 	vertical-align: top;
 	padding-left: 25px;
 	padding-right: 25px;
+	cursor: pointer;
 }
 
 #ticketForm {
@@ -22,6 +23,11 @@ body {
 	max-width: 700px;
 	border-radius: 10px;
 	margin: auto;
+}
+
+.logLink {
+	font-size: 10px;
+	margin: 0;
 }
 
 
@@ -43,6 +49,7 @@ ul li {
 
 }
 
+
 h1 {
 	font-size: 4em;
 	margin-bottom: 0px;
@@ -54,6 +61,8 @@ h1 {
 	letter-spacing: 2px;
 	margin: 20px 0px;
 }
+
+
 #whole-name {
 	font-family: 'Luckiest Guy', sans-serif;
 	letter-spacing: 2px;
@@ -72,7 +81,7 @@ h1 {
 
 .textinput {
 	height: 25px;
-	width: 250px;
+	width: 225px;
 	font-size: 16px;
 }
 
@@ -112,9 +121,9 @@ p {
 	font-size: 20px;
 }
 
-.selected {
+/*.selected {
 	background-color: #DBFEF8;
-}
+}*/
 
 .increment {
 	height: 40px;
@@ -130,7 +139,7 @@ p {
 	text-align: center;
 }
 
-#thankyou{
+#thankyou {
 	width: 250px;
 	margin-top: 40px;
 	display: inline-block;
@@ -139,6 +148,12 @@ p {
 #counter {
 	color: orange;
 	font-size: 2em;
+}
+
+
+.fa-trash-o:hover {
+	background-color: #DBFEF8
+	font-size: 40px;
 }
 
 /*************SMALLER SCREENS *************/

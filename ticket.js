@@ -1,5 +1,6 @@
 Students = new Mongo.Collection('students')
 Thanks = new Mongo.Collection('thanks')
+Problems = new Mongo.Collection('problems')
 
 
 if (Meteor.isClient) {
@@ -10,6 +11,7 @@ if (Meteor.isClient) {
     
     
   });
+
 
   Template.waiting.helpers({
     //helpers refer to {{handlebar}} keywords in the html
@@ -33,19 +35,33 @@ if (Meteor.isClient) {
     'currentlyWaiting': function(){
       //if the ul with this id has any list items, a message will be displayed.
       //DOES NOT CURRENTLY WORK
-        if( $('#waitingStudents').has('li').text){
+        if( $('#waitingStudents').has('li').value){
           return "CURRENTLY WAITING FOR HELP:"
         }
       }
       
   });
 
+  Template.problemLog.helpers({
+    problem : function(){
+      return Problems.find()
+    }
+  //   log : function(){
+  //     var problems = []
+  //     var list = Problems.find().fetch()
+  //     for(var i = 0; i < list.length; i++){
+  //       problems.push(list[i].issue)
+
+  //   } 
+  //   return problems
+  // }
+  });
+
+
   Template.thanks.events({
     'click .increment': function () {
       var thanksKevin = Thanks.findOne();
       Thanks.update(thanksKevin._id, {$inc: {thanks : 1}});
-      
-  
     }
   });
 
@@ -62,12 +78,18 @@ if (Meteor.isClient) {
         var studentClicked = Session.get('studentClicked');
       
       },
-       'click .remove' : function(event){
-      var studentClicked = Session.get('studentClicked');
-      Students.remove(studentClicked)
+       'click .remove': function(event){
+          var studentClicked = Session.get('studentClicked');
+          Students.remove(studentClicked)
+    },
+
+      'click .fa-times-circle': function(event){
+          var studentClicked = Session.get('studentClicked');
+          Students.remove(studentClicked)
     }
   });
 
+   
   Template.ticket.events({
     'submit form' : function(event){
       //using the a method from the event objects to prevent page from
@@ -76,10 +98,18 @@ if (Meteor.isClient) {
       var studentname = event.target.studentname.value;
       var issue = event.target.issue.value;
       console.log(issue)
+
+      Problems.insert({
+        name: studentname,
+        issue : issue
+      });
+
       Students.insert({
         name: studentname,
         issue: issue
       }); 
+
+
       event.target.studentname.value = "";
       event.target.issue.value = "";
     }

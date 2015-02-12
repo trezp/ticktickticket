@@ -1,40 +1,41 @@
 <head>
   <title>ticktickticket</title>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />  
- <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|PT+Sans:700' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|PT+Sans:700' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
+<template name="layout">
 <body>
 	<div id="container">
 		<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
 		<h3 class="header" id="empire">The empire's most sophisticated queue facilitation software.</h3>
 			<div id="ticketForm">
 			  	{{> ticket}}
+			  <div id="thankyou">
+				{{> thanks}}
+		 	  </div>
 			</div>
 			<div id="studentList">
 			  <p id="waitlisthead">WAIT LIST</p>
 			  {{> waiting}}
-			 <div id="thankyou">
-				{{> thanks}}
-			</div>
-	
 		</div>
 		
 	</div>	
-		
-
 </body>
+</template>
 
 <template name="waiting">
 	<ul>
 		{{#each waiting}}
 		<li class="students {{selectedClass}}">
-		<span id="waitingStudents">{{name}}:</span> {{issue}}
+		<i class="fa fa-times-circle"></i>
+		<span id="waitingStudents"> {{name}}:</span> {{issue}} 
 		</li>
 		{{/each}}
-	</ul>	
-	<input type="button" class="remove" id="remove" value="remove">
-	<p>(click your name to remove it from the list)</p>
+	</ul>
+	<!-- <input type="button" class="remove" id="remove" value="remove">
+	<p>(click your name to remove it from the list)</p> -->
 </template> 
 
 <template name="ticket">
@@ -47,10 +48,20 @@
 			<li><input type="submit" id="submit" name="submit" value="submit"></li>
 			
 		</ul>
-	</form>	 
+		<a class="logLink" href="/log">VIEW ISSUE LOG</a> 
+	</form>	
+
 </template>
 
 <template name="thanks">
 	<p>Kevin has been thanked <br><span id="counter">{{counter}}</span> times.</p>
 	<input type="button" class="increment" value="Thanks, Kevin!">
+</template>
+
+<template name="problemLog">
+	<div class="log">
+		{{#each problem}}
+		<li>{{issue}}</li>
+		{{/each}}
+	</div>
 </template>
