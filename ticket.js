@@ -21,7 +21,7 @@ if (Meteor.isClient) {
 },
     'selectedClass': function(){
         //stores the unique id from the click event
-        //has access to this._id because it's being excuted
+        //has access to this._id because it's being executed
         //inside the {{each}} block
         var studentId = this._id;
         //referring to the studentClicked Session in click event
