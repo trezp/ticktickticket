@@ -4,6 +4,7 @@ Problems = new Mongo.Collection('problems')
 
 
 if (Meteor.isClient) {
+
   Template.thanks.helpers({
     counter : function(){
       return Thanks.findOne().thanks
@@ -97,7 +98,6 @@ if (Meteor.isClient) {
       event.preventDefault();
       var studentname = event.target.studentname.value;
       var issue = event.target.issue.value;
-      console.log(issue)
 
       Problems.insert({
         name: studentname,
@@ -112,8 +112,20 @@ if (Meteor.isClient) {
 
       event.target.studentname.value = "";
       event.target.issue.value = "";
+      $("#modalForm").modal('hide');
+    }, 
+
+    'click #getInLine' : function(){
+        $('#modalForm').on('shown.bs.modal', function () {
+        $('#studentname').focus()
+            });
+
     }
+
+  
+
   });
+
 }
 
 if (Meteor.isServer) {

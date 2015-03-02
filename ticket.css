@@ -117,9 +117,24 @@ h1 {
 	letter-spacing: 1.5px
 }
 
+#getInLine {
+	height: 40px;
+	width: 100%;
+	background-color: teal;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	font-size: 16px;
+	letter-spacing: 1.5px
+}
+
+
 p {
 	font-size: 20px;
+	line-height: 25px;
 }
+
 
 /*.selected {
 	background-color: #DBFEF8;
