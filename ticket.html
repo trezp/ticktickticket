@@ -7,21 +7,23 @@
 
 <template name="layout">
 	<body>
-		<div id="container">
-			<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
-			<h3 class="header" id="empire">The empire's most sophisticated queue facilitation software.</h3>
-				<div id="ticketForm">
-					<!-- {{> modalForm }} -->
-					{{> ticket}}
-					<a class="logLink" href="/log">VIEW ISSUE LOG</a> 
+		<div class="container">
+			<div class="padding">
+				<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
+				<h3 id="empire">The empire's most sophisticated queue facilitation software.</h3>
+					<div id="ticketForm">
+						{{> ticket}}
+						<button class="waitListMode">enter wait list mode</button>
+						<button class="issueLog">view issue log</button>
+					</div>
+					<div id="thankyou">
+						{{> thanks}}
+				 	</div>
+					
+				<div id="studentList">
+					  <p id="waitlisthead">WAIT LIST</p>
+					  {{> waiting}}
 				</div>
-				<div id="thankyou">
-					{{> thanks}}
-			 	</div>
-				
-			<div id="studentList">
-				  <p id="waitlisthead">WAIT LIST</p>
-				  {{> waiting}}
 			</div>
 		</div>	
 	</body>
@@ -36,26 +38,26 @@
 		</li>
 		{{/each}}
 	</ul>
-	<!-- <input type="button" class="remove" id="remove" value="remove">
-	<p>(click your name to remove it from the list)</p> -->
 </template> 
 
 <template name="ticket">
 	<button type="button" id="getInLine" data-toggle="modal" data-target="#modalForm">
-  		Get in Line! 
+  		SUBMIT AN ISSUE
 	</button>
 
 	<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog"></div>
-		<div class="modal-header">Get in Line!</div>
+		<div class="modal-header">SUBMIT AN ISSUE
+		<button type="button" class="close" id="closeModal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div>
     		<div class="modal-content">
     		<div class="modal-body">
     			<form>
 					<ul class="issueForm">
 						<li>Enter your name:<br>
-							<input type="text" name="studentname" class="textinput" id="studentname"></li>
+							<input type="text" name="studentname" class="textinput" id="studentname" required></li>
 						<li>Briefly describe your issue:<br>
-							<input type="textarea" name="issue" id="issue" class="textinput"></li>
+							<textarea name="issue" id="issue" class="textarea" maxlength="160" required></textarea></li>
 						<li><input type="submit" id="submit" name="submit" value="submit"></li>
 					</ul>
 				</form>	
@@ -70,41 +72,24 @@
 </template>
 
 <template name="problemLog">
-	<a href="/"><i class="fa fa-arrow-circle-left"></i>Home</a>
-	<div class="log">
-		{{#each problem}}
-		<li>{{issue}}</li>
-		{{/each}}
+	<div class="container">
+	<div class="padding">
+		<a href="/"><i class="fa fa-arrow-circle-left"></i>Home</a>
+		<div class="log">
+			{{#each problem}}
+			<li>{{issue}}</li>
+			{{/each}}
+		</div>
+	</div>
 	</div>
 </template>
 
-<template name="modalForm">
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</template>
-
 <template name="waitListMode">
-	<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
-	{{>waiting}}	
+	<div class="container">
+	<div class="padding">
+		<a href="/"><i class="fa fa-arrow-circle-left"></i>Home</a>
+		<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
+		{{>waiting}}
+	</div>
+	</div>	
 </template>

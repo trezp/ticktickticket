@@ -14,15 +14,22 @@ body {
 }
 
 #ticketForm {
-	display: inline-block;
+	display: block;
 	vertical-align: top;
-	width: 300px;
+	width: 50%;
 
 }
-#container {
-	max-width: 700px;
+.container {
+	max-width: 800px;
+	height: 100%;
 	border-radius: 10px;
 	margin: auto;
+	background-color: #ECF0F1;
+	margin-top: 2.5%;
+}
+
+.padding {
+	padding: 5%;
 }
 
 .logLink {
@@ -44,7 +51,7 @@ ul li {
 
 #waitingStudents {
 	font-weight: bold; 
-	font-size: 24px;
+	font-size: 20px;
 	margin: 0;
 
 }
@@ -79,11 +86,11 @@ h1 {
 }
 
 
-.textinput {
+/*.textinput {
 	height: 25px;
 	width: 225px;
 	font-size: 16px;
-}
+}*/
 
 #studentname {
 	margin-top: 0;
@@ -117,16 +124,61 @@ h1 {
 	letter-spacing: 1.5px
 }
 
-#getInLine {
+.issueLog {
+	font-family: 'PT Sans', sans-serif;
 	height: 40px;
 	width: 100%;
-	background-color: teal;
 	color: white;
 	border: none;
 	border-radius: 2px;
 	outline: none;
-	font-size: 16px;
-	letter-spacing: 1.5px
+	font-size: 20px;
+	letter-spacing: 1.75px
+
+}
+
+#getInLine {
+	background-color: teal;
+	font-family: 'PT Sans', sans-serif;
+	height: 40px;
+	width: 100%;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	font-size: 20px;
+	letter-spacing: 1.75px;
+	border: solid black 2px;
+}
+
+.waitListMode {
+	font-family: 'PT Sans', sans-serif;
+	height: 40px;
+	width: 100%;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	font-size: 20px;
+	letter-spacing: 1.75px
+}
+
+
+button:hover {
+	background-color: #F4D03F;
+}
+
+#getInLine:hover {
+	background-color: #F4D03F;
+	font-family: 'PT Sans', sans-serif;
+	height: 40px;
+	width: 100%;
+	color: white;
+	border: none;
+	border-radius: 2px;
+	outline: none;
+	font-size: 20px;
+	letter-spacing: 1.75px
 }
 
 
@@ -154,6 +206,10 @@ p {
 	text-align: center;
 }
 
+.increment:hover {
+	color: yellow;
+}
+
 #thankyou {
 	width: 250px;
 	display: inline-block;
@@ -164,8 +220,8 @@ p {
 	font-size: 2em;
 }
 
-
 .fa-times-circle:hover {
+	font-size: 1.5em;
 	color: red;
 }
 

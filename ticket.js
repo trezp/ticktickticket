@@ -120,12 +120,29 @@ if (Meteor.isClient) {
         $('#studentname').focus()
             });
 
+    },
+
+    'click #closeModal' : function(){
+      $("#modalForm").modal('hide');
     }
 
   
 
   });
 
+  Template.layout.events({
+    'click .waitListMode' : function(event, template){
+      event.preventDefault();
+      Router.go('/waitlist');
+    },
+
+    'click .issueLog' : function(event, template){
+      event.preventDefault();
+      Router.go('/log');
+    }
+
+
+  })
 }
 
 if (Meteor.isServer) {
