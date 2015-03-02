@@ -261,6 +261,10 @@ p {
 
 	}
 
+	.log {
+		padding: 5%;
+	}
+
 	h1 {
 		font-size: 2rem;
 		margin-bottom: 0px;
