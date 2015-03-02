@@ -5,26 +5,30 @@ body {
 
 }
 #studentList {
-	display: inline-block;
-	width: 300px;
+	/*display: inline-block;*/
+	/*width: 45%;*/
 	vertical-align: top;
-	padding-left: 25px;
+	padding-left: 10px;
 	padding-right: 25px;
 	cursor: pointer;
+	background-color: white;
+	float: right;
+	border: solid black 2px;
+	border-radius:  5px;
 }
 
 #ticketForm {
-	display: block;
+	display: inline-block;
 	vertical-align: top;
-	width: 50%;
-
+	width: 45%;
+	float: left;
 }
 .container {
-	max-width: 800px;
+	max-width: 960px;
 	height: 100%;
 	border-radius: 10px;
 	margin: auto;
-	background-color: #ECF0F1;
+	background-color: #ECECEC; 
 	margin-top: 2.5%;
 }
 
@@ -64,9 +68,10 @@ h1 {
 
 #waitlisthead {
 	font-family: 'Luckiest Guy', sans-serif;
-	font-size: 2em;
+	font-size: 3em;
 	letter-spacing: 2px;
 	margin: 20px 0px;
+
 }
 
 
@@ -86,28 +91,10 @@ h1 {
 }
 
 
-/*.textinput {
-	height: 25px;
-	width: 225px;
-	font-size: 16px;
-}*/
-
 #studentname {
 	margin-top: 0;
 }
 
-#remove {
-	height: 40px;
-	width: 150px;
-	background-color: teal;
-	color: white;
-	border: none;
-	border-radius: 2px;
-	outline: none;
-	text-align: center;
-	font-size: 16px;
-	letter-spacing: 1.5px;
-}
 #waiting {
 	font-size: 24px;
 }
@@ -125,6 +112,7 @@ h1 {
 }
 
 .issueLog {
+	background-color: #6C7A89;
 	font-family: 'PT Sans', sans-serif;
 	height: 40px;
 	width: 100%;
@@ -133,8 +121,8 @@ h1 {
 	border-radius: 2px;
 	outline: none;
 	font-size: 20px;
-	letter-spacing: 1.75px
-
+	letter-spacing: 1.75px;
+	margin: 2px 0;
 }
 
 #getInLine {
@@ -152,6 +140,7 @@ h1 {
 }
 
 .waitListMode {
+	background-color: #6C7A89;
 	font-family: 'PT Sans', sans-serif;
 	height: 40px;
 	width: 100%;
@@ -160,12 +149,13 @@ h1 {
 	border-radius: 2px;
 	outline: none;
 	font-size: 20px;
-	letter-spacing: 1.75px
+	letter-spacing: 1.75px;
+	margin: 2px 0;
 }
 
 
 button:hover {
-	background-color: #F4D03F;
+	background-color: #81CFE0;
 }
 
 #getInLine:hover {
@@ -183,14 +173,11 @@ button:hover {
 
 
 p {
-	font-size: 20px;
-	line-height: 25px;
+	font-size: 17px;
+	line-height: 30px;
+	margin-top: 20px;
 }
 
-
-/*.selected {
-	background-color: #DBFEF8;
-}*/
 
 .increment {
 	height: 40px;
@@ -207,11 +194,11 @@ p {
 }
 
 .increment:hover {
-	color: yellow;
+	color: black;
 }
 
 #thankyou {
-	width: 250px;
+	width: 100%;
 	display: inline-block;
 }
 
@@ -225,12 +212,36 @@ p {
 	color: red;
 }
 
+.fa-arrow-circle-left {
+	color: teal;
+}
+
+.fa-arrow-circle-left:hover {
+	color: #F4D03F;
+}
+
 /*************SMALLER SCREENS *************/
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
+	
+	body {
+		padding: 0;
+		margin: 0;
+	}
+	.modal { 
+		display:none; 
+	}
 
-	#container {
-		max-width: 100%;
+	.padding {
+		padding: 0;
+	}
+
+	#empire {
+		display: none;
+	}
+
+	.container {
+		width: 100%;
 
 	}
 
@@ -247,37 +258,41 @@ p {
 		display: block;
 		vertical-align: top;
 		width: 100%;
-		padding-left: 5px;
 
 	}
 
 	h1 {
-		font-size: 2em;
+		font-size: 2rem;
 		margin-bottom: 0px;
+		text-align: center;
 	}
 
-	#thankyou p {
-		font-size: 14px;
+
+	#thankyou {
+		display: none;
+	}
+
+	#studentList {
+		border: none;
+	}
+
+	.waitListMode, .issueLog, #getInLine {
 		margin: 0;
-		margin-top: 10px;
 	}
 
-	#thankyou span {
-		font-size: 16px;
+	#getInLine {
+		border: none;
 	}
 
-	.increment {
-		height: 20px;
-		width: 150px;
-	}
 
 	#waitlisthead {
 		font-family: 'Luckiest Guy', sans-serif;
+		text-align: center;
 		font-size: 2.5em;
 		letter-spacing: 2px;
 		margin-bottom: 0px;
-		margin-top: 30px;
 	}
+
 	ul {
 		margin-top: 0px;
 	}
