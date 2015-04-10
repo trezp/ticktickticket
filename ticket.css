@@ -1,12 +1,9 @@
-
-
 body {
 	font-family: 'PT Sans', sans-serif;
 
 }
+
 #studentList {
-	/*display: inline-block;*/
-	/*width: 45%;*/
 	vertical-align: top;
 	padding-left: 10px;
 	padding-right: 25px;
@@ -23,6 +20,7 @@ body {
 	width: 45%;
 	float: left;
 }
+
 .container {
 	max-width: 960px;
 	height: 100%;
@@ -139,6 +137,10 @@ h1 {
 	border: solid black 2px;
 }
 
+#getInLine:hover {
+	background-color: #F4D03F;
+}
+
 .waitListMode {
 	background-color: #6C7A89;
 	font-family: 'PT Sans', sans-serif;
@@ -156,19 +158,6 @@ h1 {
 
 button:hover {
 	background-color: #81CFE0;
-}
-
-#getInLine:hover {
-	background-color: #F4D03F;
-	font-family: 'PT Sans', sans-serif;
-	height: 40px;
-	width: 100%;
-	color: white;
-	border: none;
-	border-radius: 2px;
-	outline: none;
-	font-size: 20px;
-	letter-spacing: 1.75px
 }
 
 

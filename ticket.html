@@ -11,7 +11,7 @@
 			<div class="padding">
 				<h1 class="header"><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
 				<h3 id="empire">The empire's most sophisticated queue facilitation software.</h3>
-				<div class="row-fluid">
+			<div class="row-fluid">
 					<div class="span6" id="ticketForm">
 						{{> ticket}}
 						<button class="waitListMode">enter wait list mode</button>
@@ -36,8 +36,8 @@
 	<ul>
 		{{#each waiting}}
 		<li class="students {{selectedClass}}">
-		<i class="fa fa-times-circle"></i>
-		<span id="waitingStudents"> {{name}}:</span> {{issue}} 
+			<i class="fa fa-times-circle"></i>
+			<span id="waitingStudents"> {{name}}:</span> {{issue}} 
 		</li>
 		{{/each}}
 	</ul>
@@ -90,7 +90,6 @@
 <template name="waitListMode">
 	<div class="container">
 	<div class="padding">
-		
 		<h1 class="header"><a href="/"><i class="fa fa-arrow-circle-left fa"></i></a><span id="whole-name">Tick<span id="tealtick">Tick</span>Ticket</span></h1>
 		{{>waiting}}
 	</div>

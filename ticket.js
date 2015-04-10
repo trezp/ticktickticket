@@ -1,16 +1,14 @@
-Students = new Mongo.Collection('students')
-Thanks = new Mongo.Collection('thanks')
-Problems = new Mongo.Collection('problems')
+Students = new Mongo.Collection('students');
+Problems = new Mongo.Collection('problems');
+Thanks = new Mongo.Collection('thanks');
 
 
 if (Meteor.isClient) {
-
+  //returns the number of thanks yous from the database 
   Template.thanks.helpers({
     counter : function(){
       return Thanks.findOne().thanks
     }
-    
-    
   });
 
 
@@ -18,44 +16,14 @@ if (Meteor.isClient) {
     //helpers refer to {{handlebar}} keywords in the html
     //return students from the database
     'waiting' : function (){
-      return Students.find()
-},
-    'selectedClass': function(){
-        //stores the unique id from the click event
-        //has access to this._id because it's being executed
-        //inside the {{each}} block
-        var studentId = this._id;
-        //referring to the studentClicked Session in click event
-        var studentClicked = Session.get('studentClicked');
-        //if they matched, the .selected class is triggered and the
-        //list item is highlighted 
-        if(studentId == studentClicked){
-          return "selected"
-        }
-      },
-    'currentlyWaiting': function(){
-      //if the ul with this id has any list items, a message will be displayed.
-      //DOES NOT CURRENTLY WORK
-        if( $('#waitingStudents').has('li').value){
-          return "CURRENTLY WAITING FOR HELP:"
-        }
-      }
-      
-  });
+      return Students.find();
+  }      
+});
 
   Template.problemLog.helpers({
     problem : function(){
       return Problems.find()
     }
-  //   log : function(){
-  //     var problems = []
-  //     var list = Problems.find().fetch()
-  //     for(var i = 0; i < list.length; i++){
-  //       problems.push(list[i].issue)
-
-  //   } 
-  //   return problems
-  // }
   });
 
 
@@ -74,19 +42,19 @@ if (Meteor.isClient) {
         var studentInfo = this._id;
         //the first argument is the name of the session
         //the second argument is the info passed into the session
-        Session.set('studentClicked', studentInfo)
+        Session.set('studentClicked', studentInfo);
         //set the retrieved info to a variable
         var studentClicked = Session.get('studentClicked');
       
       },
        'click .remove': function(event){
           var studentClicked = Session.get('studentClicked');
-          Students.remove(studentClicked)
+          Students.remove(studentClicked);
     },
 
       'click .fa-times-circle': function(event){
           var studentClicked = Session.get('studentClicked');
-          Students.remove(studentClicked)
+          Students.remove(studentClicked);
     }
   });
 
